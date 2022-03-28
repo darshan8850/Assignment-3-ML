@@ -83,4 +83,4 @@ def mse(y_hat, y):
     > Returns the mae as float
     """
     assert(y_hat.size == y.size)
-    return np.sum((y_hat-y)**2)/y.
+    return np.sum((y_hat-y)**2)/y
