@@ -10,7 +10,7 @@ style.use('seaborn')
 
 
 class Binary_Logistic_Reg():
-    def __init__(self,bias=False,n_feature):
+    def __init__(self,n_feature,bias=False):
         self.bias=bias
         if self.bias:
             self.theta=np.random.normal(size=(n_feature+1,1))
@@ -83,7 +83,7 @@ class Binary_Logistic_Reg():
 
 
 class Multiclass_Logistic_Reg():
-    def __init__(self,bias=False,n_feature):
+    def __init__(self,n_feature,bias=False):
         self.bias=bias
         if self.bias:
             self.theta=np.random.normal(size=(n_feature+1,1))
