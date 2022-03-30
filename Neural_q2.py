@@ -3,10 +3,12 @@ import tensorflow as tf
 from metrics import *
 from data import Data
 
+tf.random.set_seed(45)
+
 if __name__ == '__main__':
     
     data=Data(n_feature=2)
-    xor_data=data.xor_dataset(split=0.6,size=200)
+    xor_data=data.xor(split=0.6,size=200)
     
     X_train,Y_train= tf.convert_to_tensor(xor_data['train_x']),tf.convert_to_tensor(xor_data['train_y'])
     X_test, Y_test   = tf.convert_to_tensor(xor_data['test_x']),tf.convert_to_tensor(xor_data['test_y'])
