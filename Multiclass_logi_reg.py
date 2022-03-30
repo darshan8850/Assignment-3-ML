@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 from data import Data
 from model import Multiclass_Logistic_Reg
 import matplotlib.pyplot as plt
@@ -9,15 +9,15 @@ from metrics import *
 
 if __name__ == '__main__':
 
-    data=Data()
-    X_train,Y_train,X_test,Y_test=data.iris_datset(loc='data/iris.csv',split=0.8,type='sepal')
+    data=Data(n_feature=2)
+    X_train,Y_train,X_test,Y_test=data.iris(loc='iris.csv',split=0.8,type='sepal')
     
     cls = np.unique(Y_train)
     n_feature=X_train.shape[1]
 
     model=Multiclass_Logistic_Reg(n_feature=n_feature,bias=False)
 
-    model.train(X_train,Y_train,cls=cls,lamda=0.0,lr=1e-1,epch=1000)
+    model.model_train(X_train,Y_train,cls=cls,lamda=0.0,lr=1e-1,epch=1000)
     Y_hat = np.squeeze(model.test(X_test))
     
     total_acc = 0.0

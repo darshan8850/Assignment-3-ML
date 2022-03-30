@@ -7,7 +7,7 @@ np.random.seed(45)
 
 if __name__ == '__main__':
     data=Data(n_feature=2)
-    XOR_data=data.xor_dataset(N=200,split=0.6)
+    XOR_data=data.xor(size=200,split=0.6)
     X_train,Y_train=XOR_data['train_x'],XOR_data['train_y']
     X_test,Y_test=XOR_data['test_x'],XOR_data['test_y']    
 

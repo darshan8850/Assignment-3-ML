@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+import autograd.numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 
@@ -29,14 +29,14 @@ class Data():
         return X_train,Y_train,X_test,Y_test
 
 
-        def xor(self,size,split=0.6):
-          data={}
-          train_size=int(size*train_split)
-          X=np.random.randn(size,self.n_feature)
-          Y=np.int64(np.logical_xor(X[:,0]>0,X[:,1]>0))
+    def xor(self,size,split=0.6):
+        data={}
+        train_size=int(size*split)
+        X=np.random.randn(size,self.n_feature)
+        Y=np.int64(np.logical_xor(X[:,0]>0,X[:,1]>0))
           
-          data['train_x']=X[:train_size]
-          data['train_y']=Y[:train_size]
-          data['test_x']=X[train_size:]
-          data['test_y']=Y[train_size:]
-          return data
+        data['train_x']=X[:train_size]
+        data['train_y']=Y[:train_size]
+        data['test_x']=X[train_size:]
+        data['test_y']=Y[train_size:]
+        return data

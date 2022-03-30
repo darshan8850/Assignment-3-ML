@@ -8,7 +8,7 @@ tf.random.set_seed(45)
 if __name__ == '__main__':
     
     data=Data(n_feature=2)
-    X_train, Y_train, X_test, Y_test =data.iris(path="iris.csv",split=0.6,type='sepal')
+    X_train, Y_train, X_test, Y_test =data.iris(loc="iris.csv",split=0.6,type='sepal')
     
     X_train, Y_train = tf.convert_to_tensor(X_train) , tf.convert_to_tensor(Y_train)
     X_test, Y_test   = tf.convert_to_tensor(X_test) , tf.convert_to_tensor(Y_test)

@@ -1,4 +1,4 @@
-import numpy as np
+import autograd.numpy as np
 
 def accuracy(y_hat, y):
     """
