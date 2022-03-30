@@ -7,7 +7,7 @@ class Data():
     def __init__(self,n_feature):
         self.n_feature=n_feature
 
-    def iris(self,split=0.8,loc,type='sepal'):
+    def iris(self,loc,split=0.8,type='sepal'):
         data=pd.read_csv(loc,header=0)
         l_e=LabelEncoder()
         data['label']=l_e.fit_transform(data['variety'])
@@ -29,7 +29,7 @@ class Data():
         return X_train,Y_train,X_test,Y_test
 
 
-        def xor(self,split=0.6,size):
+        def xor(self,size,split=0.6):
           data={}
           train_size=int(size*train_split)
           X=np.random.randn(size,self.n_feature)
